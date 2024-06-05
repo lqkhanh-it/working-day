@@ -9,14 +9,14 @@ const TableRow = ({ working }: { working: DisplayWorkingTime }) => {
   const [notMeetingDayCount, setNotMeetingDayCount] = useState(0);
 
   useEffect(() => {
-    if (workingDayCount) {
+    if (workingDayCount && working?.days) {
       setNotMeetingDayCount(working.days - workingDayCount);
     }
     // return () => {
     //   setNotMeetingDayCount(0);
     //   setWorkingDayCount(0);
     // }
-  }, [workingDayCount]);
+  }, [workingDayCount, working]);
 
   return (
     <tr>

@@ -5,7 +5,7 @@ const GENDER_COLOR = {
   Polygender: "primary",
 };
 
-export default ({ gender }: { gender: string }) => {
+const Gender = ({ gender }: { gender: string }) => {
   return (
     <span
       className={`badge badge-${
@@ -16,3 +16,5 @@ export default ({ gender }: { gender: string }) => {
     </span>
   );
 };
+
+export default Gender;

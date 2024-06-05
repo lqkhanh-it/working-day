@@ -1,6 +1,6 @@
 import { Meeting } from "@prisma/client";
 import { useEffect, useState } from "react";
-export default ({
+const MeetingDay = ({
   meetings,
   onMeetingCount,
 }: {
@@ -14,7 +14,7 @@ export default ({
     return () => {
       setMeetingCount(0);
     };
-  }, [meetingCount]);
+  }, [meetingCount, onMeetingCount]);
 
   useEffect(() => {
     if (Array.isArray(meetings)) {
@@ -38,7 +38,7 @@ export default ({
       {meetings.map((meeting) => {
         const { start_day, end_day } = meeting;
         return (
-          <div className="badge badge-info badge-sm">
+          <div className="badge badge-info badge-sm" key={meeting.id}>
             {start_day}-{end_day}
           </div>
         );
@@ -46,3 +46,4 @@ export default ({
     </div>
   );
 };
+export default MeetingDay;
