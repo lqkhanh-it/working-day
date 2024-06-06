@@ -1,4 +1,3 @@
-import { DisplayWorkingTime } from "@/app/type";
 import { index } from "@/models/user.model";
 
 export async function GET(req: Request) {
